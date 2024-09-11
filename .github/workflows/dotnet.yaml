@@ -1,7 +1,7 @@
 name: .NET CI
 
 env:
-  registryName: {your_registry_name}.azurecr.io
+  registryName: "{your_registry_name}.azurecr.io"
   repositoryName: techexcel/dotnetcoreapp
   dockerFolderPath: ./src/Application/src/RazorPagesTestSample
   tag: ${{github.run_number}}
@@ -78,7 +78,7 @@ jobs:
       - uses: azure/webapps-deploy@v2
         with:
           app-name: '{your_prefix}-dev'
-          images: {your_registry_name}.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}
+          images: "{your_registry_name}.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}"
 
   deploy-to-test:
   
@@ -99,7 +99,7 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: '{your_prefix}-test'
-        images: {your_registry_name}.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}
+        images: "{your_registry_name}.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}"
 
   deploy-to-prod:
   
@@ -120,4 +120,4 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         app-name: '{your_prefix}-prod'
-        images: {your_registry_name}.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}
+        images: "{your_registry_name}.azurecr.io/techexcel/dotnetcoreapp:${{github.run_number}}"
